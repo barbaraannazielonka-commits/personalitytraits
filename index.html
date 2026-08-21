@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Trait Collection: Build Your English Personality Vocabulary</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700;9..144,900&family=Work+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#ECE6D6;
+  --paper-2:#E1DAC5;
+  --paper-3:#D8CFB5;
+  --ink:#23271F;
+  --ink-soft:#52564A;
+  --teal:#1F5C52;
+  --teal-dark:#123C35;
+  --brass:#A9812F;
+  --rust:#A6432F;
+  --sage:#6E7A5C;
+  --line: rgba(35,39,31,0.16);
+  --line-strong: rgba(35,39,31,0.32);
+  --c-think:#1F5C52;
+  --c-warm:#B5566B;
+  --c-driven:#A9812F;
+  --c-steady:#3E5C76;
+  --c-bold:#C1622B;
+  --c-complex:#6C4F77;
+  --shadow: 0 6px 18px rgba(35,39,31,0.14);
+  --shadow-lg: 0 18px 40px rgba(35,39,31,0.22);
+  --radius: 3px;
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Work Sans', sans-serif;
+  font-size:16px;
+  line-height:1.55;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{
+  font-family:'Fraunces', serif;
+  font-weight:700;
+  margin:0 0 .4em 0;
+  letter-spacing:-.01em;
+}
+p{margin:0 0 1em 0;}
+a{color:inherit;}
+button{font-family:inherit;}
+.mono{font-family:'JetBrains Mono', monospace;}
+.eyebrow{
+  font-family:'JetBrains Mono', monospace;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--ink-soft);
+}
+.wrap{max-width:1180px; margin:0 auto; padding:0 28px;}
+:focus-visible{outline:3px solid var(--teal); outline-offset:2px;}
+@media (prefers-reduced-motion: reduce){
+  *{animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; scroll-behavior:auto !important;}
+}
+
+/* ---------- texture ---------- */
+.paper-tex{
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(35,39,31,0.035) 0, transparent 45%),
+    radial-gradient(circle at 85% 75%, rgba(35,39,31,0.035) 0, transparent 45%);
+}
+
+/* ---------- header ---------- */
+.site-header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(236,230,214,0.92);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line-strong);
+}
+.header-inner{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:20px; padding:14px 28px;
+  max-width:1180px; margin:0 auto;
+}
+.brand{
+  display:flex; align-items:center; gap:10px;
+  font-family:'Fraunces', serif; font-weight:700; font-size:1.28rem;
+  white-space:nowrap;
+}
+.brand .pin{
+  width:11px; height:11px; border-radius:50%;
+  background:var(--rust);
+  box-shadow:0 0 0 3px rgba(166,67,47,0.18);
+  flex-shrink:0;
+}
+nav.tabs{
+  display:flex; gap:4px;
+  overflow-x:auto;
+  scrollbar-width:none;
+  -ms-overflow-style:none;
+}
+nav.tabs::-webkit-scrollbar{display:none;}
+nav.tabs button{
+  border:1px solid transparent;
+  background:transparent;
+  color:var(--ink-soft);
+  padding:9px 14px;
+  font-size:.86rem;
+  font-weight:600;
+  border-radius:999px;
+  cursor:pointer;
+  white-space:nowrap;
+  transition:all .18s ease;
+}
+nav.tabs button:hover{ color:var(--ink); background:var(--paper-2); }
+nav.tabs button.active{
+  background:var(--ink);
+  color:var(--paper);
+  border-color:var(--ink);
+}
+
+/* ---------- hero / drawer ---------- */
+.hero{
+  padding:64px 0 40px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1.05fr .95fr;
+  gap:48px;
+  align-items:center;
+}
+.hero h1{
+  font-size:clamp(2.4rem, 4.4vw, 3.6rem);
+  line-height:1.02;
+  margin-bottom:.3em;
+}
+.hero h1 em{ font-style:italic; color:var(--teal); }
+.hero p.lead{
+  font-size:1.08rem;
+  color:var(--ink-soft);
+  max-width:46ch;
+}
+.hero-cta{ display:flex; gap:12px; margin-top:22px; flex-wrap:wrap; }
+.btn{
+  font-weight:600; font-size:.92rem;
+  padding:12px 22px;
+  border-radius:999px;
+  border:1px solid var(--ink);
+  cursor:pointer;
+  transition:transform .15s ease, background .15s ease, color .15s ease;
+  display:inline-flex; align-items:center; gap:8px;
+}
+.btn-primary{ background:var(--ink); color:var(--paper); }
+.btn-primary:hover{ transform:translateY(-2px); background:var(--teal-dark); border-color:var(--teal-dark); }
+.btn-ghost{ background:transparent; color:var(--ink); }
+.btn-ghost:hover{ transform:translateY(-2px); background:var(--paper-2); }
+
+.stat-row{ display:flex; gap:28px; margin-top:30px; flex-wrap:wrap; }
+.stat-row div{ min-width:80px; }
+.stat-num{ font-family:'Fraunces',serif; font-weight:800; font-size:1.7rem; color:var(--teal); line-height:1;}
+.stat-label{ font-size:.74rem; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.08em; margin-top:4px;}
+
+/* drawer visual */
+.drawer{
+  position:relative;
+  height:420px;
+  border-radius:10px;
+  background:
+    repeating-linear-gradient(90deg, rgba(0,0,0,0.05) 0 2px, transparent 2px 90px),
+    linear-gradient(160deg, #7A5B3A, #5B3F26 70%, #4a331e);
+  box-shadow: inset 0 0 0 8px rgba(0,0,0,0.12), var(--shadow-lg);
+  padding:26px;
+  overflow:hidden;
+}
+.drawer::before{
+  content:"";
+  position:absolute; inset:16px;
+  border:1px dashed rgba(255,255,255,0.18);
+  border-radius:6px;
+  pointer-events:none;
+}
+.drawer .felt{
+  position:absolute; inset:26px;
+  background:#3B4A3E;
+  border-radius:4px;
+  box-shadow:inset 0 2px 10px rgba(0,0,0,0.4);
+}
+.drawer-cards{
+  position:relative; z-index:2;
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:16px;
+  height:100%;
+  align-content:start;
+}
+.mini-spec{
+  background:var(--paper);
+  border-radius:2px;
+  padding:12px 10px 10px;
+  box-shadow:0 6px 14px rgba(0,0,0,0.35);
+  transform:rotate(var(--rot,-2deg));
+  opacity:0;
+  animation:pinIn .6s ease forwards;
+  position:relative;
+}
+.mini-spec::before{
+  content:"";
+  position:absolute; top:6px; left:50%; transform:translateX(-50%);
+  width:7px; height:7px; border-radius:50%;
+  background:var(--rust);
+  box-shadow:0 0 0 2px rgba(166,67,47,0.25);
+}
+.mini-spec b{
+  display:block; font-family:'Fraunces',serif; font-size:.86rem; font-weight:700; margin-top:6px;
+}
+.mini-spec span{
+  display:block; font-family:'JetBrains Mono',monospace; font-size:.62rem; color:var(--ink-soft); margin-top:3px; text-transform:uppercase; letter-spacing:.04em;
+}
+@keyframes pinIn{
+  from{ opacity:0; transform:translateY(-14px) rotate(var(--rot,-2deg)) scale(.9); }
+  to{ opacity:1; transform:translateY(0) rotate(var(--rot,-2deg)) scale(1); }
+}
+
+/* ---------- sections ---------- */
+.view{ display:none; padding:36px 0 80px; }
+.view.active{ display:block; }
+.section-head{ margin-bottom:26px; max-width:64ch; }
+.section-head h2{ font-size:clamp(1.6rem,3vw,2.2rem); }
+.section-head p{ color:var(--ink-soft); }
+
+/* ---------- filter bar ---------- */
+.filter-bar{
+  display:flex; gap:10px; flex-wrap:wrap; align-items:center;
+  margin-bottom:22px;
+  padding-bottom:18px;
+  border-bottom:1px solid var(--line);
+}
+.chip{
+  border:1px solid var(--line-strong);
+  background:var(--paper);
+  padding:7px 14px;
+  border-radius:999px;
+  font-size:.82rem;
+  font-weight:600;
+  cursor:pointer;
+  display:inline-flex; align-items:center; gap:6px;
+  transition:all .15s ease;
+}
+.chip .dot{ width:8px; height:8px; border-radius:50%; }
+.chip:hover{ border-color:var(--ink); }
+.chip.active{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.search-input{
+  margin-left:auto;
+  border:1px solid var(--line-strong);
+  background:var(--paper);
+  padding:8px 14px;
+  border-radius:999px;
+  font-size:.86rem;
+  min-width:200px;
+  color:var(--ink);
+}
+.search-input:focus{ border-color:var(--teal); }
+
+/* ---------- specimen grid ---------- */
+.spec-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(230px,1fr));
+  gap:18px;
+}
+.card{
+  background:var(--paper-2);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:18px 16px 16px;
+  cursor:pointer;
+  position:relative;
+  transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.card:hover{ transform:translateY(-3px); box-shadow:var(--shadow); border-color:var(--line-strong); }
+.card .fam-dot{ width:9px; height:9px; border-radius:50%; display:inline-block; margin-right:7px; }
+.card .word{ font-family:'Fraunces',serif; font-size:1.28rem; font-weight:700; margin:8px 0 4px; }
+.card .no{ color:var(--ink-soft); font-size:.86rem; font-style:italic;}
+.card .rarity-stamp{
+  position:absolute; top:12px; right:12px;
+  width:30px; height:30px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-family:'JetBrains Mono',monospace; font-size:.62rem; font-weight:700;
+  color:#fff;
+  border:2px solid rgba(255,255,255,0.5);
+}
+.card .fam-tag{ display:flex; align-items:center; font-size:.7rem; text-transform:uppercase; letter-spacing:.06em; color:var(--ink-soft); font-family:'JetBrains Mono',monospace;}
+
+/* ---------- modal ---------- */
+.modal-backdrop{
+  position:fixed; inset:0; background:rgba(23,26,19,0.55);
+  display:none; align-items:center; justify-content:center; z-index:100; padding:20px;
+}
+.modal-backdrop.open{ display:flex; }
+.modal{
+  background:var(--paper);
+  max-width:520px; width:100%;
+  border-radius:6px;
+  padding:30px 30px 26px;
+  box-shadow:var(--shadow-lg);
+  position:relative;
+  max-height:88vh; overflow-y:auto;
+}
+.modal-close{
+  position:absolute; top:14px; right:14px;
+  background:transparent; border:none; font-size:1.4rem; cursor:pointer; color:var(--ink-soft);
+  line-height:1; padding:4px 8px;
+}
+.modal .fam-tag{ font-family:'JetBrains Mono',monospace; font-size:.72rem; text-transform:uppercase; letter-spacing:.08em; color:var(--ink-soft); }
+.modal h3{ font-size:2rem; margin-top:8px; }
+.modal .no-line{ font-style:italic; color:var(--ink-soft); margin-bottom:14px; font-size:1.05rem;}
+.modal .def{ margin-bottom:12px; }
+.modal .ex{ background:var(--paper-2); border-left:3px solid var(--teal); padding:10px 14px; font-style:italic; border-radius:0 4px 4px 0; margin-bottom:14px;}
+.syn-list{ display:flex; gap:8px; flex-wrap:wrap; margin-top:6px;}
+.syn-pill{ background:var(--paper-3); padding:5px 12px; border-radius:999px; font-size:.82rem; font-weight:600;}
+
+/* ---------- flashcards ---------- */
+.fc-wrap{ display:flex; flex-direction:column; align-items:center; gap:22px; }
+.fc-controls-top{ display:flex; gap:10px; flex-wrap:wrap; justify-content:center; }
+.fc-stage{ width:100%; max-width:440px; height:280px; perspective:1400px; }
+.fc-card{
+  width:100%; height:100%; position:relative;
+  transform-style:preserve-3d; transition:transform .5s cubic-bezier(.2,.8,.2,1);
+  cursor:pointer;
+}
+.fc-card.flipped{ transform:rotateY(180deg); }
+.fc-face{
+  position:absolute; inset:0; backface-visibility:hidden;
+  border-radius:8px; border:1px solid var(--line-strong);
+  display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center;
+  padding:26px; box-shadow:var(--shadow);
+}
+.fc-front{ background:var(--paper-2); }
+.fc-back{ background:var(--ink); color:var(--paper); transform:rotateY(180deg); }
+.fc-front .word{ font-family:'Fraunces',serif; font-weight:800; font-size:2rem; }
+.fc-front .hint{ margin-top:10px; color:var(--ink-soft); font-size:.86rem;}
+.fc-back .def{ font-size:1.02rem; margin-bottom:10px;}
+.fc-back .no-line{ font-style:italic; opacity:.75; margin-bottom:8px;}
+.fc-back .syn-list .syn-pill{ background:rgba(236,230,214,0.15); color:var(--paper);}
+.fc-nav{ display:flex; align-items:center; gap:14px; }
+.icon-btn{
+  border:1px solid var(--line-strong); background:var(--paper); width:42px; height:42px;
+  border-radius:50%; cursor:pointer; font-size:1.1rem; display:flex; align-items:center; justify-content:center;
+  transition:all .15s ease;
+}
+.icon-btn:hover{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.fc-progress{ font-family:'JetBrains Mono',monospace; font-size:.8rem; color:var(--ink-soft);}
+.known-track{ display:flex; gap:8px; }
+.known-track .btn{ padding:9px 16px; font-size:.82rem;}
+
+/* ---------- quiz ---------- */
+.quiz-setup{ max-width:520px; }
+.setup-row{ margin-bottom:18px; }
+.setup-row label{ display:block; font-weight:600; margin-bottom:8px; font-size:.9rem;}
+.pill-select{ display:flex; gap:8px; flex-wrap:wrap;}
+.quiz-box{ max-width:640px; }
+.quiz-progress-bar{ height:6px; background:var(--paper-3); border-radius:999px; overflow:hidden; margin-bottom:22px;}
+.quiz-progress-fill{ height:100%; background:var(--teal); transition:width .3s ease; }
+.quiz-q{ font-size:1.3rem; margin-bottom:6px; }
+.quiz-sub{ color:var(--ink-soft); font-size:.88rem; margin-bottom:20px;}
+.quiz-options{ display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.opt-btn{
+  text-align:left; padding:16px 18px; border-radius:6px; border:1px solid var(--line-strong);
+  background:var(--paper-2); cursor:pointer; font-size:.98rem; font-weight:600; transition:all .15s ease;
+}
+.opt-btn:hover{ border-color:var(--ink); }
+.opt-btn.correct{ background:var(--teal); color:#fff; border-color:var(--teal); }
+.opt-btn.wrong{ background:var(--rust); color:#fff; border-color:var(--rust); }
+.opt-btn[disabled]{ cursor:default; }
+.quiz-footer{ display:flex; justify-content:space-between; align-items:center; margin-top:22px;}
+.quiz-score{ font-family:'JetBrains Mono',monospace; font-size:.86rem; }
+.quiz-result{ text-align:center; padding:20px 0; }
+.quiz-result .big{ font-family:'Fraunces',serif; font-size:3.2rem; font-weight:800; color:var(--teal);}
+.review-list{ text-align:left; margin-top:24px; border-top:1px solid var(--line); padding-top:18px;}
+.review-item{ padding:10px 0; border-bottom:1px solid var(--line); font-size:.9rem;}
+.review-item.bad b{ color:var(--rust); }
+.review-item.good b{ color:var(--teal); }
+
+/* ---------- match game ---------- */
+.match-top{ display:flex; gap:22px; align-items:center; margin-bottom:18px; flex-wrap:wrap;}
+.match-stat{ font-family:'JetBrains Mono',monospace; font-size:.86rem; background:var(--paper-2); padding:6px 12px; border-radius:6px;}
+.match-grid{ display:grid; grid-template-columns:repeat(4, 1fr); gap:12px; }
+@media(max-width:640px){ .match-grid{ grid-template-columns:repeat(3,1fr); } }
+.tile{
+  aspect-ratio:1.15/1;
+  background:var(--paper-2); border:1px solid var(--line-strong); border-radius:6px;
+  display:flex; align-items:center; justify-content:center; text-align:center; padding:10px;
+  font-weight:700; font-size:.92rem; cursor:pointer; transition:all .18s ease;
+}
+.tile:hover{ border-color:var(--ink); }
+.tile.selected{ background:var(--brass); color:#fff; border-color:var(--brass); }
+.tile.matched{ background:var(--teal); color:#fff; border-color:var(--teal); opacity:.55; cursor:default; }
+.tile.shake{ animation:shake .4s ease; }
+@keyframes shake{ 0%,100%{transform:translateX(0);} 25%{transform:translateX(-6px);} 75%{transform:translateX(6px);} }
+.match-win{ text-align:center; padding:40px 0; }
+
+/* ---------- profile builder ---------- */
+.profile-layout{ display:grid; grid-template-columns:1fr 320px; gap:32px; align-items:start; }
+@media(max-width:900px){ .profile-layout{ grid-template-columns:1fr; } }
+.pick-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(180px,1fr)); gap:12px; }
+.pick-card{
+  border:1px solid var(--line-strong); background:var(--paper-2); border-radius:6px;
+  padding:12px 14px; cursor:pointer; transition:all .15s ease; position:relative;
+}
+.pick-card:hover{ border-color:var(--ink); }
+.pick-card.picked{ background:var(--ink); color:var(--paper); border-color:var(--ink); }
+.pick-card .word{ font-family:'Fraunces',serif; font-weight:700; font-size:1.05rem; }
+.pick-card .no{ font-size:.78rem; opacity:.7; font-style:italic;}
+.field-card{
+  position:sticky; top:100px;
+  background:var(--paper-2);
+  border:1px solid var(--line-strong);
+  border-radius:8px;
+  padding:24px;
+  box-shadow:var(--shadow);
+}
+.field-card h3{ font-size:1.1rem; margin-bottom:4px;}
+.field-card .eyebrow{ margin-bottom:14px; display:block;}
+.field-card ul{ list-style:none; padding:0; margin:0 0 18px 0; }
+.field-card li{ padding:8px 0; border-bottom:1px dashed var(--line-strong); font-family:'Fraunces',serif; font-weight:600; font-size:1.02rem;}
+.field-card li span{ display:block; font-family:'Work Sans',sans-serif; font-weight:400; font-size:.8rem; color:var(--ink-soft); font-style:italic;}
+.field-empty{ color:var(--ink-soft); font-size:.88rem; font-style:italic; }
+
+/* ---------- footer ---------- */
+footer{ border-top:1px solid var(--line-strong); padding:34px 0 60px; margin-top:20px;}
+footer p{ color:var(--ink-soft); font-size:.86rem; margin:0;}
+
+@media(max-width:860px){
+  .hero-grid{ grid-template-columns:1fr; }
+  .drawer{ height:300px; }
+  .quiz-options{ grid-template-columns:1fr; }
+}
+@media(max-width:520px){
+  .wrap{ padding:0 18px; }
+  .header-inner{ padding:12px 18px; }
+  .brand span.brand-text{ display:none; }
+}
+
+@media print{
+  body *{ visibility:hidden; }
+  .field-card, .field-card *{ visibility:visible; }
+  .field-card{ position:fixed; top:0; left:0; right:0; margin:40px auto; box-shadow:none; }
+}
+</style>
+</head>
+<body class="paper-tex">
+
+<header class="site-header">
+  <div class="header-inner">
+    <div class="brand"><span class="pin"></span><span class="brand-text">The Trait Collection</span></div>
+    <nav class="tabs" id="mainNav">
+      <button data-view="explore" class="active">Explore</button>
+      <button data-view="idioms">Idioms</button>
+      <button data-view="flashcards">Flashcards</button>
+      <button data-view="quiz">Quiz</button>
+      <button data-view="match">Match Game</button>
+      <button data-view="profile">My Collection</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero wrap" id="heroSection">
+    <div class="hero-grid">
+      <div>
+        <p class="eyebrow">42 words · 24 idioms · 6 families</p>
+        <h1>Collect words that<br><em>describe you.</em></h1>
+        <p class="lead">Most people say "nice" or "funny" about themselves. Here you'll learn the words (and the idioms) that actually land: precise, advanced ways of describing personality that real people, and exams, notice.</p>
+        <div class="hero-cta">
+          <button class="btn btn-primary" onclick="goTo('flashcards')">Start with flashcards →</button>
+          <button class="btn btn-ghost" onclick="goTo('explore')">Browse the collection</button>
+        </div>
+        <div class="stat-row">
+          <div><div class="stat-num">42</div><div class="stat-label">Adjectives</div></div>
+          <div><div class="stat-num">24</div><div class="stat-label">Idioms</div></div>
+          <div><div class="stat-num">6</div><div class="stat-label">Families</div></div>
+          <div><div class="stat-num">5</div><div class="stat-label">Ways to learn</div></div>
+        </div>
+      </div>
+      <div class="drawer" aria-hidden="true">
+        <div class="felt"></div>
+        <div class="drawer-cards" id="drawerCards"></div>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap">
+
+  <!-- EXPLORE -->
+  <section class="view active" id="view-explore">
+    <div class="section-head">
+      <h2>Explore the collection</h2>
+      <p>42 specimens, sorted by family and rarity. Click a card to open it and see the full label: definition, example, synonyms, and the Norwegian translation. Looking for full phrases instead of single words? Visit the <a href="#" onclick="goTo('idioms'); return false;" style="color:var(--teal); font-weight:600;">Idioms</a> tab.</p>
+    </div>
+    <div class="filter-bar" id="filterBar"></div>
+    <div class="spec-grid" id="exploreGrid"></div>
+  </section>
+
+  <!-- IDIOMS -->
+  <section class="view" id="view-idioms">
+    <div class="section-head">
+      <h2>Personality idioms</h2>
+      <p>24 English idioms people use to describe character: the kind of colourful phrases that go beyond single adjectives. Click one to see its meaning, an example, and the Norwegian translation.</p>
+    </div>
+    <div class="filter-bar" id="idiomFilterBar"></div>
+    <div class="spec-grid" id="idiomGrid"></div>
+  </section>
+
+  <!-- FLASHCARDS -->
+  <section class="view" id="view-flashcards">
+    <div class="section-head">
+      <h2>Flashcards</h2>
+      <p>See the word, guess the meaning, flip the card. Mark "I know this one" to build your own mastery list for this session.</p>
+    </div>
+    <div class="fc-wrap">
+      <div class="fc-controls-top" id="fcDeckToggle"></div>
+      <div class="fc-controls-top" id="fcFamilyFilter"></div>
+      <div class="fc-stage">
+        <div class="fc-card" id="fcCard">
+          <div class="fc-face fc-front">
+            <div class="word" id="fcWord">···</div>
+            <div class="hint">Click the card to flip it</div>
+          </div>
+          <div class="fc-face fc-back">
+            <div class="def" id="fcDef"></div>
+            <div class="no-line" id="fcNo"></div>
+            <div class="syn-list" id="fcSyn"></div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-nav">
+        <button class="icon-btn" id="fcPrev" title="Previous">←</button>
+        <div class="fc-progress" id="fcProgress">1 / 42</div>
+        <button class="icon-btn" id="fcNext" title="Next">→</button>
+      </div>
+      <div class="known-track">
+        <button class="btn btn-ghost" id="fcShuffle">🔀 Shuffle cards</button>
+        <button class="btn btn-primary" id="fcKnown">✓ I know this one</button>
+      </div>
+      <div class="fc-progress" id="fcKnownCount">Mastered this session: 0 / 42</div>
+    </div>
+  </section>
+
+  <!-- QUIZ -->
+  <section class="view" id="view-quiz">
+    <div class="section-head">
+      <h2>Quiz</h2>
+      <p>Test yourself. Choose a question type and length, and see how many you get right.</p>
+    </div>
+    <div id="quizArea"></div>
+  </section>
+
+  <!-- MATCH -->
+  <section class="view" id="view-match">
+    <div class="section-head">
+      <h2>Match Game</h2>
+      <p>Match each word with its correct synonym. Fewest moves, fastest time wins.</p>
+    </div>
+    <div class="match-top" id="matchDeckToggle"></div>
+    <div class="match-top">
+      <div class="match-stat">Moves: <span id="matchMoves">0</span></div>
+      <div class="match-stat">Time: <span id="matchTime">0:00</span></div>
+      <button class="btn btn-ghost" id="matchNew">🔁 New set</button>
+    </div>
+    <div class="match-grid" id="matchGrid"></div>
+    <div class="match-win" id="matchWin" style="display:none;"></div>
+  </section>
+
+  <!-- PROFILE -->
+  <section class="view" id="view-profile">
+    <div class="section-head">
+      <h2>My Collection</h2>
+      <p>Pick up to 8 words that describe you. They'll appear on your personal field card on the right, great for CV practice, oral exams, or just getting to know yourself in English.</p>
+    </div>
+    <div class="profile-layout">
+      <div class="pick-grid" id="pickGrid"></div>
+      <div class="field-card">
+        <span class="eyebrow">Field card</span>
+        <h3>My personality traits</h3>
+        <ul id="fieldList"></ul>
+        <div class="field-empty" id="fieldEmpty">No words selected yet. Click on words in the list to the left.</div>
+        <button class="btn btn-ghost" onclick="window.print()" style="width:100%; justify-content:center; margin-top:6px;">🖨 Print my card</button>
+      </div>
+    </div>
+  </section>
+
+  </div>
+
+  <footer class="wrap">
+    <p>The Trait Collection · A vocabulary tool for exploring the words that describe character. Progress is only saved for this session. It resets if you reload the page.</p>
+    <p style="margin-top:10px; font-weight:600; color:var(--ink);">Nannestad High School · Barbara Anna Zielonka</p>
+  </footer>
+
+</main>
+
+<!-- MODAL -->
+<div class="modal-backdrop" id="modalBackdrop">
+  <div class="modal">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <div class="fam-tag" id="modalFam"></div>
+    <h3 id="modalWord"></h3>
+    <div class="no-line" id="modalNo"></div>
+    <div class="def" id="modalDef"></div>
+    <div class="ex" id="modalEx"></div>
+    <div class="eyebrow" id="modalSynLabel">Synonyms</div>
+    <div class="syn-list" id="modalSyn"></div>
+  </div>
+</div>
+
+<script>
+/* =========================================================
+   DATA
+========================================================= */
+const FAMILIES = {
+  think:   { label:"The Thinker",      color:"var(--c-think)",   hex:"#1F5C52", desc:"Analytical and sharp." },
+  warm:    { label:"The Warm-Hearted",color:"var(--c-warm)",    hex:"#B5566B", desc:"Social and considerate." },
+  driven:  { label:"The Driven",      color:"var(--c-driven)",  hex:"#A9812F", desc:"Goal-driven and persistent." },
+  steady:  { label:"The Steady",      color:"var(--c-steady)",  hex:"#3E5C76", desc:"Calm and dependable." },
+  bold:    { label:"The Bold",        color:"var(--c-bold)",    hex:"#C1622B", desc:"Forward and self-assured." },
+  complex: { label:"The Complex",     color:"var(--c-complex)", hex:"#6C4F77", desc:"Nuanced, a little unpredictable." },
+};
+
+const RARITY = {
+  U:{ label:"Uncommon",   hex:"#6E7A5C" },
+  R:{ label:"Rare",       hex:"#A9812F" },
+  L:{ label:"Legendary",  hex:"#A6432F" },
+};
+
+const WORDS = [
+  {w:"Perspicacious", no:"skarpsindig", fam:"think", rar:"L", def:"Quick and accurate in understanding, able to see straight through a problem to what really matters.", ex:"Her perspicacious comment made the whole class rethink the argument.", syn:["astute","sagacious","discerning"]},
+  {w:"Astute", no:"kløktig", fam:"think", rar:"R", def:"Having sharp judgement and a good instinct for what's really going on.", ex:"He made an astute guess about how the negotiation would end.", syn:["shrewd","sharp-witted","canny"]},
+  {w:"Pragmatic", no:"pragmatisk", fam:"think", rar:"U", def:"Dealing with things in a sensible, realistic way rather than following fixed ideas.", ex:"I'm pretty pragmatic. I care more about what works than what sounds good.", syn:["practical","sensible","down-to-earth"]},
+  {w:"Inquisitive", no:"nysgjerrig", fam:"think", rar:"U", def:"Curious, always eager to find out how and why things work.", ex:"She's inquisitive by nature. She asks 'but why' about everything.", syn:["curious","probing","questioning"]},
+  {w:"Discerning", no:"dømmekraftig", fam:"think", rar:"R", def:"Showing good judgement, especially about quality or truth.", ex:"A discerning reader notices when an argument doesn't quite add up.", syn:["perceptive","judicious","tasteful"]},
+  {w:"Methodical", no:"metodisk", fam:"think", rar:"U", def:"Doing things in a careful, orderly, step-by-step way.", ex:"I'm methodical when I study. Everything gets its own folder.", syn:["systematic","disciplined","orderly"]},
+  {w:"Erudite", no:"beleset", fam:"think", rar:"L", def:"Having or showing great knowledge gained from serious reading and study.", ex:"His erudite answer surprised the teacher. He'd clearly read far beyond the syllabus.", syn:["scholarly","learned","well-read"]},
+
+  {w:"Magnanimous", no:"storsinnet", fam:"warm", rar:"L", def:"Generous and forgiving, especially toward someone you'd have every right to resent.", ex:"She was magnanimous in victory and thanked her rival by name.", syn:["generous","big-hearted","gracious"]},
+  {w:"Affable", no:"elskverdig", fam:"warm", rar:"U", def:"Friendly, good-natured, and easy to talk to.", ex:"The new teacher is affable. You can just walk up and chat.", syn:["amiable","genial","approachable"]},
+  {w:"Empathetic", no:"empatisk", fam:"warm", rar:"U", def:"Able to sense and understand what other people are feeling.", ex:"He's the most empathetic person in our friend group. He always notices when someone's off.", syn:["compassionate","understanding","sympathetic"]},
+  {w:"Convivial", no:"selskapelig", fam:"warm", rar:"R", def:"Friendly, cheerful, and fond of good company, the life of a gathering.", ex:"Dinner at their house is always convivial, full of laughter and loud stories.", syn:["sociable","jovial","gregarious"]},
+  {w:"Altruistic", no:"uselvisk", fam:"warm", rar:"R", def:"Showing selfless concern for the well-being of others.", ex:"Her altruistic streak means she's always the one organising the charity bake sale.", syn:["selfless","charitable","philanthropic"]},
+  {w:"Gregarious", no:"omgjengelig", fam:"warm", rar:"U", def:"Sociable, enjoying the company of others, drawn to groups.", ex:"I'm gregarious. Put me in a room of strangers and I'll know everyone by the end.", syn:["sociable","outgoing","convivial"]},
+  {w:"Benevolent", no:"velvillig", fam:"warm", rar:"R", def:"Well-meaning and kind, wanting good things for others.", ex:"Our coach has a benevolent way of correcting mistakes: never harsh, always encouraging.", syn:["kind","charitable","compassionate"]},
+
+  {w:"Tenacious", no:"utholdende", fam:"driven", rar:"U", def:"Holding firmly onto a goal or idea, refusing to let go even when it's hard.", ex:"She's tenacious. Three rejections in, and she still hasn't stopped applying.", syn:["persistent","resolute","dogged"]},
+  {w:"Indefatigable", no:"utrettelig", fam:"driven", rar:"L", def:"Never tiring, never giving up, no matter how long the task takes.", ex:"Our captain is indefatigable. Training in the rain never seems to slow her down.", syn:["tireless","unflagging","relentless"]},
+  {w:"Resolute", no:"målbevisst", fam:"driven", rar:"R", def:"Firmly determined, not wavering once a decision has been made.", ex:"He stayed resolute about switching subjects, even when everyone doubted him.", syn:["determined","steadfast","unwavering"]},
+  {w:"Ambitious", no:"ambisiøs", fam:"driven", rar:"U", def:"Having a strong desire and determination to achieve something significant.", ex:"I'm ambitious about grades this year. I actually want the top mark, not just a pass.", syn:["driven","aspiring","hungry"]},
+  {w:"Diligent", no:"flittig", fam:"driven", rar:"U", def:"Showing careful, steady effort in your work.", ex:"She's diligent about homework: never late, never rushed.", syn:["hardworking","industrious","conscientious"]},
+  {w:"Intrepid", no:"uredd", fam:"driven", rar:"R", def:"Fearless and adventurous, willing to face danger or difficulty head-on.", ex:"He's the intrepid one of the group, first to try the new hiking route.", syn:["fearless","bold","dauntless"]},
+  {w:"Enterprising", no:"initiativrik", fam:"driven", rar:"R", def:"Resourceful and full of initiative, quick to spot and act on an opportunity.", ex:"She's enterprising. She turned a school project into an actual small business.", syn:["resourceful","inventive","go-getting"]},
+
+  {w:"Unflappable", no:"urokkelig", fam:"steady", rar:"R", def:"Staying calm and composed no matter how chaotic or stressful things get.", ex:"He stayed unflappable while everyone else panicked about the deadline.", syn:["composed","imperturbable","cool-headed"]},
+  {w:"Prudent", no:"klok", fam:"steady", rar:"U", def:"Careful and sensible, thinking ahead before acting.", ex:"Being prudent with money, she saved half of every paycheck.", syn:["sensible","cautious","judicious"]},
+  {w:"Level-headed", no:"fornuftig", fam:"steady", rar:"U", def:"Calm and sensible, especially in a crisis.", ex:"When the fire alarm went off, she was the level-headed one who found the exit.", syn:["composed","balanced","rational"]},
+  {w:"Steadfast", no:"standhaftig", fam:"steady", rar:"R", def:"Loyal and unwavering in your support, beliefs, or purpose.", ex:"My best friend has been steadfast through every bad decision I've made.", syn:["loyal","faithful","unwavering"]},
+  {w:"Conscientious", no:"samvittighetsfull", fam:"steady", rar:"U", def:"Careful and thorough, guided by a strong sense of what's right.", ex:"He's conscientious about deadlines. He'd rather submit early than risk being late.", syn:["diligent","meticulous","dutiful"]},
+  {w:"Meticulous", no:"grundig", fam:"steady", rar:"R", def:"Extremely careful and precise about every detail.", ex:"Her notes are meticulous: colour-coded, dated, and never missing a page.", syn:["precise","thorough","painstaking"]},
+  {w:"Circumspect", no:"varsom", fam:"steady", rar:"L", def:"Wary and careful, thinking about the consequences before acting or speaking.", ex:"He's circumspect about sharing opinions online. He thinks twice before posting.", syn:["cautious","wary","prudent"]},
+
+  {w:"Audacious", no:"dristig", fam:"bold", rar:"R", def:"Willing to take bold risks, often surprisingly so.", ex:"It was an audacious move to email the professor directly, but it worked.", syn:["daring","bold","fearless"]},
+  {w:"Brazen", no:"frekk", fam:"bold", rar:"R", def:"Bold and shameless, showing no embarrassment about something risky or improper.", ex:"He gave a brazen answer to a question he clearly hadn't prepared for.", syn:["shameless","bold","impudent"]},
+  {w:"Charismatic", no:"karismatisk", fam:"bold", rar:"U", def:"Having a compelling charm or magnetism that draws people in.", ex:"She's charismatic on stage. The whole room listens the second she starts talking.", syn:["magnetic","captivating","charming"]},
+  {w:"Assertive", no:"bestemt", fam:"bold", rar:"U", def:"Confident and direct in stating your opinions or needs, without being aggressive.", ex:"I've gotten more assertive. I actually say what I think in group projects now.", syn:["confident","forthright","self-assured"]},
+  {w:"Flamboyant", no:"prangende", fam:"bold", rar:"R", def:"Bold, colourful, and eye-catching in style or manner.", ex:"His flamboyant presentation style makes even boring topics fun to watch.", syn:["showy","extravagant","theatrical"]},
+  {w:"Irrepressible", no:"ustoppelig", fam:"bold", rar:"L", def:"Impossible to hold back or control, bursting with energy or enthusiasm.", ex:"Her irrepressible energy makes group projects actually enjoyable.", syn:["unstoppable","exuberant","boundless"]},
+  {w:"Unabashed", no:"ugenert", fam:"bold", rar:"U", def:"Not embarrassed or ashamed, openly confident about something.", ex:"He's unabashed about loving a show most people think is uncool.", syn:["unashamed","brazen","undeterred"]},
+
+  {w:"Mercurial", no:"uberegnelig", fam:"complex", rar:"R", def:"Subject to sudden, unpredictable changes in mood.", ex:"Her mercurial moods make it hard to know which version of her you'll get today.", syn:["volatile","unpredictable","temperamental"]},
+  {w:"Enigmatic", no:"gåtefull", fam:"complex", rar:"R", def:"Mysterious and hard to fully understand or figure out.", ex:"He gives short, enigmatic answers that leave you thinking for days.", syn:["mysterious","cryptic","inscrutable"]},
+  {w:"Obstinate", no:"sta", fam:"complex", rar:"U", def:"Stubbornly refusing to change your mind or approach, even when you probably should.", ex:"She's obstinate about doing it her way, even after three failed attempts.", syn:["stubborn","headstrong","obdurate"]},
+  {w:"Fastidious", no:"kresen", fam:"complex", rar:"L", def:"Extremely attentive to detail and hard to please: everything has to be exactly right.", ex:"He's fastidious about his desk. One pen out of place and he notices.", syn:["meticulous","particular","picky"]},
+  {w:"Idiosyncratic", no:"særegen", fam:"complex", rar:"L", def:"Peculiar or individual, following your own unusual pattern rather than the norm.", ex:"Her idiosyncratic taste in music means her playlists never sound like anyone else's.", syn:["quirky","distinctive","unconventional"]},
+  {w:"Nonchalant", no:"sorgløs", fam:"complex", rar:"U", def:"Casually calm and unconcerned, as if nothing could faze you.", ex:"He stayed nonchalant about the exam results, even though he'd clearly been stressed all week.", syn:["unconcerned","indifferent","blasé"]},
+  {w:"Pensive", no:"ettertenksom", fam:"complex", rar:"U", def:"Deeply thoughtful, often with a quiet or slightly wistful edge.", ex:"She went pensive after the film, staring out the window the whole bus ride home.", syn:["reflective","contemplative","wistful"]},
+];
+
+WORDS.forEach((w,i)=>w.id=i);
+
+const IDIOMS = [
+  {idiom:"Sharp as a tack", no:"lynskarp", fam:"think", gloss:"very intelligent", def:"Someone who is very intelligent and quick-witted. Nothing gets past them.", ex:"He's sharp as a tack. He solved the puzzle before anyone else had even read it twice."},
+  {idiom:"Quick on the uptake", no:"rask til å forstå", fam:"think", gloss:"learns fast", def:"Fast to understand or learn something new.", ex:"She's quick on the uptake, so you only ever need to explain a rule once."},
+  {idiom:"Have a head for something", no:"ha hode for noe", fam:"think", gloss:"naturally skilled", def:"To be naturally good at a particular subject or skill.", ex:"He's always had a head for numbers, even before he started studying economics."},
+  {idiom:"Read between the lines", no:"lese mellom linjene", fam:"think", gloss:"notices hidden meaning", def:"To notice a hidden or unstated meaning, showing that you're perceptive.", ex:"She's great at reading between the lines. She knew something was wrong before anyone said it."},
+
+  {idiom:"Heart of gold", no:"hjerte av gull", fam:"warm", gloss:"deeply kind", def:"Someone who is deeply kind, generous, and caring.", ex:"She's got a heart of gold: always the first to help, never asks for anything back."},
+  {idiom:"Wear your heart on your sleeve", no:"bære hjertet på ermet", fam:"warm", gloss:"shows feelings openly", def:"To openly show your emotions instead of hiding them.", ex:"He wears his heart on his sleeve. You always know exactly how he's feeling."},
+  {idiom:"The life of the party", no:"festens midtpunkt", fam:"warm", gloss:"lively & sociable", def:"A lively, entertaining, and sociable person who energizes any gathering.", ex:"Put her in any room and within ten minutes she's the life of the party."},
+  {idiom:"A shoulder to cry on", no:"en skulder å gråte på", fam:"warm", gloss:"comforting support", def:"Someone supportive you can turn to for comfort when things go wrong.", ex:"Whenever things get rough, she's always a shoulder to cry on."},
+
+  {idiom:"Go the extra mile", no:"gå den ekstra milen", fam:"driven", gloss:"makes extra effort", def:"To make an extra effort to achieve something or help someone, beyond what's expected.", ex:"He always goes the extra mile to make sure the project turns out perfect."},
+  {idiom:"Burn the midnight oil", no:"jobbe til langt på natt", fam:"driven", gloss:"works late", def:"To work late into the night, usually to finish something important.", ex:"Before finals, she burns the midnight oil every single night."},
+  {idiom:"Have fire in your belly", no:"ha ild i magen", fam:"driven", gloss:"highly motivated", def:"To be highly motivated and passionate about achieving something.", ex:"You need fire in your belly if you're going to start your own business at seventeen."},
+  {idiom:"Not one to rest on your laurels", no:"ikke hvile på laurbærne", fam:"driven", gloss:"never settles", def:"Not satisfied with past success, someone who keeps pushing for more.", ex:"Even after winning the championship, she's not one to rest on her laurels."},
+
+  {idiom:"Cool as a cucumber", no:"iskald (rolig)", fam:"steady", gloss:"calm under pressure", def:"Very calm and composed, especially when everyone else is panicking.", ex:"During the exam chaos, he stayed cool as a cucumber."},
+  {idiom:"Steady as a rock", no:"stø som en fjellgrunn", fam:"steady", gloss:"totally dependable", def:"Completely dependable and calm, no matter what happens.", ex:"Our team captain is steady as a rock, whatever the scoreline says."},
+  {idiom:"Keep a level head", no:"holde hodet kaldt", fam:"steady", gloss:"stays calm & clear", def:"To stay calm and think clearly, especially in a stressful situation.", ex:"She always keeps a level head when the rest of us are losing it."},
+  {idiom:"Have your feet on the ground", no:"ha begge beina på jorda", fam:"steady", gloss:"down-to-earth", def:"To be sensible and realistic, not carried away by excitement or fame.", ex:"Despite going viral, she still has her feet firmly on the ground."},
+
+  {idiom:"Speak your mind", no:"si sin mening rett ut", fam:"bold", gloss:"says what they think", def:"To say honestly what you think, even if it's unpopular or risky.", ex:"He always speaks his mind, even when the whole room disagrees."},
+  {idiom:"Have the guts to do something", no:"ha guts til noe", fam:"bold", gloss:"brave enough to act", def:"To be brave enough to do something difficult or risky.", ex:"It takes guts to do stand-up comedy for the very first time."},
+  {idiom:"Larger than life", no:"større enn livet selv", fam:"bold", gloss:"bold, vivid personality", def:"Having a bold, vivid, larger-than-normal personality that stands out in any room.", ex:"Grandpa was larger than life. Every story got taller with each retelling."},
+  {idiom:"Not afraid to rock the boat", no:"ikke redd for å skape bølger", fam:"bold", gloss:"challenges the status quo", def:"Willing to challenge the usual way of doing things, even if it causes disruption.", ex:"She's not afraid to rock the boat if she thinks a rule is unfair."},
+
+  {idiom:"A hard nut to crack", no:"en hard nøtt å knekke", fam:"complex", gloss:"hard to understand", def:"A person who is difficult to understand, persuade, or figure out.", ex:"He's a hard nut to crack. You genuinely never know what he's thinking."},
+  {idiom:"Full of surprises", no:"full av overraskelser", fam:"complex", gloss:"unpredictable", def:"Unpredictable, constantly doing or saying unexpected things.", ex:"You never know what she'll do next. She's always full of surprises."},
+  {idiom:"Blow hot and cold", no:"være uberegnelig", fam:"complex", gloss:"inconsistent feelings", def:"To be inconsistent about your feelings or decisions, changing back and forth.", ex:"He blows hot and cold about the plan: one day he's in, the next day he's out."},
+  {idiom:"March to the beat of your own drum", no:"gå i sin egen takt", fam:"complex", gloss:"does their own thing", def:"To behave in your own individual, unconventional way, ignoring trends or expectations.", ex:"She's always marched to the beat of her own drum, no matter what's trending."},
+];
+
+IDIOMS.forEach((it,i)=>it.id=i);
+
+/* =========================================================
+   NAV
+========================================================= */
+function goTo(view){
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('view-'+view).classList.add('active');
+  document.querySelectorAll('#mainNav button').forEach(b=>b.classList.toggle('active', b.dataset.view===view));
+  window.scrollTo({top:document.getElementById('view-'+view).offsetTop-80, behavior:'smooth'});
+}
+document.getElementById('mainNav').addEventListener('click', e=>{
+  const btn = e.target.closest('button[data-view]');
+  if(btn) goTo(btn.dataset.view);
+});
+
+/* =========================================================
+   HERO DRAWER
+========================================================= */
+(function drawer(){
+  const el = document.getElementById('drawerCards');
+  const picks = [...WORDS].sort(()=>Math.random()-0.5).slice(0,6);
+  el.innerHTML = picks.map((w,i)=>`
+    <div class="mini-spec" style="--rot:${(Math.random()*6-3).toFixed(1)}deg; animation-delay:${i*0.12}s;">
+      <span class="mono">${RARITY[w.rar].label}</span>
+      <b>${w.w}</b>
+      <span>${w.no}</span>
+    </div>`).join('');
+})();
+
+/* =========================================================
+   EXPLORE
+========================================================= */
+let activeFam = 'all';
+let searchTerm = '';
+
+function renderFilterBar(){
+  const bar = document.getElementById('filterBar');
+  let html = `<button class="chip ${activeFam==='all'?'active':''}" data-fam="all">All families</button>`;
+  Object.entries(FAMILIES).forEach(([key,f])=>{
+    html += `<button class="chip ${activeFam===key?'active':''}" data-fam="${key}"><span class="dot" style="background:${f.hex}"></span>${f.label}</button>`;
+  });
+  html += `<input class="search-input" id="searchInput" type="text" placeholder="Search by word or Norwegian translation…" value="${searchTerm}">`;
+  bar.innerHTML = html;
+
+  bar.querySelectorAll('.chip').forEach(c=>c.addEventListener('click', ()=>{
+    activeFam = c.dataset.fam;
+    renderFilterBar();
+    renderExploreGrid();
+  }));
+  document.getElementById('searchInput').addEventListener('input', e=>{
+    searchTerm = e.target.value.toLowerCase();
+    renderExploreGrid();
+  });
+}
+
+function renderExploreGrid(){
+  const grid = document.getElementById('exploreGrid');
+  let list = WORDS.filter(w=> activeFam==='all' || w.fam===activeFam);
+  if(searchTerm){
+    list = list.filter(w=> w.w.toLowerCase().includes(searchTerm) || w.no.toLowerCase().includes(searchTerm) || w.syn.some(s=>s.toLowerCase().includes(searchTerm)));
+  }
+  if(list.length===0){
+    grid.innerHTML = `<p style="color:var(--ink-soft)">No words match your search.</p>`;
+    return;
+  }
+  grid.innerHTML = list.map(w=>`
+    <div class="card" data-id="${w.id}">
+      <div class="rarity-stamp" style="background:${RARITY[w.rar].hex}">${w.rar}</div>
+      <div class="fam-tag"><span class="fam-dot" style="background:${FAMILIES[w.fam].hex}"></span>${FAMILIES[w.fam].label}</div>
+      <div class="word">${w.w}</div>
+      <div class="no">${w.no}</div>
+    </div>`).join('');
+
+  grid.querySelectorAll('.card').forEach(c=>c.addEventListener('click', ()=>openModal(Number(c.dataset.id))));
+}
+
+function openModal(id){
+  const w = WORDS.find(x=>x.id===id);
+  document.getElementById('modalFam').innerHTML = `<span class="fam-dot" style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${FAMILIES[w.fam].hex};margin-right:6px;"></span>${FAMILIES[w.fam].label} · ${RARITY[w.rar].label}`;
+  document.getElementById('modalWord').textContent = w.w;
+  document.getElementById('modalNo').textContent = 'Norwegian: ' + w.no;
+  document.getElementById('modalDef').textContent = w.def;
+  document.getElementById('modalEx').textContent = '"' + w.ex + '"';
+  document.getElementById('modalSynLabel').textContent = 'Synonyms';
+  document.getElementById('modalSyn').innerHTML = w.syn.map(s=>`<span class="syn-pill">${s}</span>`).join('');
+  document.getElementById('modalBackdrop').classList.add('open');
+}
+
+function openIdiomModal(id){
+  const it = IDIOMS.find(x=>x.id===id);
+  document.getElementById('modalFam').innerHTML = `<span class="fam-dot" style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${FAMILIES[it.fam].hex};margin-right:6px;"></span>${FAMILIES[it.fam].label} · Idiom`;
+  document.getElementById('modalWord').textContent = '\u201C' + it.idiom + '\u201D';
+  document.getElementById('modalNo').textContent = 'Norwegian: ' + it.no;
+  document.getElementById('modalDef').textContent = it.def;
+  document.getElementById('modalEx').textContent = '"' + it.ex + '"';
+  document.getElementById('modalSynLabel').textContent = 'Similar idioms';
+  const related = IDIOMS.filter(x=>x.fam===it.fam && x.id!==it.id).sort(()=>Math.random()-0.5).slice(0,3);
+  document.getElementById('modalSyn').innerHTML = related.map(r=>`<span class="syn-pill">${r.idiom}</span>`).join('');
+  document.getElementById('modalBackdrop').classList.add('open');
+}
+document.getElementById('modalClose').addEventListener('click', ()=>document.getElementById('modalBackdrop').classList.remove('open'));
+document.getElementById('modalBackdrop').addEventListener('click', e=>{
+  if(e.target.id==='modalBackdrop') document.getElementById('modalBackdrop').classList.remove('open');
+});
+
+renderFilterBar();
+renderExploreGrid();
+
+/* =========================================================
+   IDIOMS EXPLORE
+========================================================= */
+let activeIdiomFam = 'all';
+
+function renderIdiomFilterBar(){
+  const bar = document.getElementById('idiomFilterBar');
+  let html = `<button class="chip ${activeIdiomFam==='all'?'active':''}" data-fam="all">All families</button>`;
+  Object.entries(FAMILIES).forEach(([key,f])=>{
+    html += `<button class="chip ${activeIdiomFam===key?'active':''}" data-fam="${key}"><span class="dot" style="background:${f.hex}"></span>${f.label}</button>`;
+  });
+  bar.innerHTML = html;
+  bar.querySelectorAll('.chip').forEach(c=>c.addEventListener('click', ()=>{
+    activeIdiomFam = c.dataset.fam;
+    renderIdiomFilterBar();
+    renderIdiomGrid();
+  }));
+}
+
+function renderIdiomGrid(){
+  const grid = document.getElementById('idiomGrid');
+  let list = IDIOMS.filter(it=> activeIdiomFam==='all' || it.fam===activeIdiomFam);
+  grid.innerHTML = list.map(it=>`
+    <div class="card" data-id="${it.id}">
+      <div class="fam-tag"><span class="fam-dot" style="background:${FAMILIES[it.fam].hex}"></span>${FAMILIES[it.fam].label}</div>
+      <div class="word" style="font-size:1.08rem; font-style:italic;">&ldquo;${it.idiom}&rdquo;</div>
+      <div class="no">${it.gloss}</div>
+    </div>`).join('');
+  grid.querySelectorAll('.card').forEach(c=>c.addEventListener('click', ()=>openIdiomModal(Number(c.dataset.id))));
+}
+
+renderIdiomFilterBar();
+renderIdiomGrid();
+
+/* =========================================================
+   FLASHCARDS
+========================================================= */
+let fcDeck = 'words'; // 'words' | 'idioms'
+let fcOrder = WORDS.map(w=>w.id);
+let fcIndex = 0;
+let fcFlipped = false;
+let fcFam = 'all';
+let fcKnown = new Set();
+
+function fcSource(){ return fcDeck==='idioms' ? IDIOMS : WORDS; }
+
+function renderFcDeckToggle(){
+  const el = document.getElementById('fcDeckToggle');
+  el.innerHTML = `
+    <button class="chip ${fcDeck==='words'?'active':''}" data-deck="words">Words</button>
+    <button class="chip ${fcDeck==='idioms'?'active':''}" data-deck="idioms">Idioms</button>`;
+  el.querySelectorAll('.chip').forEach(c=>c.addEventListener('click', ()=>{
+    fcDeck = c.dataset.deck;
+    fcFam = 'all';
+    fcOrder = fcSource().map(x=>x.id);
+    fcIndex = 0;
+    renderFcDeckToggle();
+    renderFcFamilyFilter();
+    renderFlashcard();
+  }));
+}
+
+function renderFcFamilyFilter(){
+  const el = document.getElementById('fcFamilyFilter');
+  let html = `<button class="chip ${fcFam==='all'?'active':''}" data-fam="all">All</button>`;
+  Object.entries(FAMILIES).forEach(([key,f])=>{
+    html += `<button class="chip ${fcFam===key?'active':''}" data-fam="${key}"><span class="dot" style="background:${f.hex}"></span>${f.label}</button>`;
+  });
+  el.innerHTML = html;
+  el.querySelectorAll('.chip').forEach(c=>c.addEventListener('click', ()=>{
+    fcFam = c.dataset.fam;
+    fcOrder = fcSource().filter(x=> fcFam==='all' || x.fam===fcFam).map(x=>x.id);
+    fcIndex = 0;
+    renderFcFamilyFilter();
+    renderFlashcard();
+  }));
+}
+
+function renderFlashcard(){
+  const card = document.getElementById('fcCard');
+  card.classList.remove('flipped');
+  fcFlipped = false;
+  const source = fcSource();
+  if(fcOrder.length===0){ fcOrder = source.map(x=>x.id); }
+  const item = source.find(x=>x.id===fcOrder[fcIndex]);
+  const isIdiom = fcDeck==='idioms';
+  document.getElementById('fcWord').textContent = isIdiom ? '\u201C'+item.idiom+'\u201D' : item.w;
+  document.getElementById('fcDef').textContent = item.def;
+  document.getElementById('fcNo').textContent = 'Norwegian: ' + item.no;
+  document.getElementById('fcSyn').innerHTML = isIdiom
+    ? `<span class="syn-pill" style="max-width:100%;">${item.ex}</span>`
+    : item.syn.map(s=>`<span class="syn-pill">${s}</span>`).join('');
+  document.getElementById('fcProgress').textContent = `${fcIndex+1} / ${fcOrder.length}`;
+  document.getElementById('fcKnownCount').textContent = `Mastered this session: ${fcKnown.size} / ${WORDS.length + IDIOMS.length}`;
+}
+
+document.getElementById('fcCard').addEventListener('click', function(){
+  fcFlipped = !fcFlipped;
+  this.classList.toggle('flipped', fcFlipped);
+});
+document.getElementById('fcPrev').addEventListener('click', ()=>{
+  fcIndex = (fcIndex-1+fcOrder.length)%fcOrder.length;
+  renderFlashcard();
+});
+document.getElementById('fcNext').addEventListener('click', ()=>{
+  fcIndex = (fcIndex+1)%fcOrder.length;
+  renderFlashcard();
+});
+document.getElementById('fcShuffle').addEventListener('click', ()=>{
+  fcOrder.sort(()=>Math.random()-0.5);
+  fcIndex = 0;
+  renderFlashcard();
+});
+document.getElementById('fcKnown').addEventListener('click', ()=>{
+  fcKnown.add((fcDeck==='idioms'?'i':'w')+fcOrder[fcIndex]);
+  document.getElementById('fcKnownCount').textContent = `Mastered this session: ${fcKnown.size} / ${WORDS.length + IDIOMS.length}`;
+  fcIndex = (fcIndex+1)%fcOrder.length;
+  renderFlashcard();
+});
+
+renderFcDeckToggle();
+renderFcFamilyFilter();
+renderFlashcard();
+
+/* =========================================================
+   QUIZ
+========================================================= */
+let quizState = null;
+
+function renderQuizSetup(){
+  const area = document.getElementById('quizArea');
+  area.innerHTML = `
+    <div class="quiz-setup">
+      <div class="setup-row">
+        <label>Question type</label>
+        <div class="pill-select" id="qTypeSelect">
+          <button class="chip active" data-val="def">Definition → word</button>
+          <button class="chip" data-val="no">Norwegian → English</button>
+          <button class="chip" data-val="mix">Mix both</button>
+          <button class="chip" data-val="idiom">Idiom → meaning</button>
+        </div>
+      </div>
+      <div class="setup-row">
+        <label>Number of questions</label>
+        <div class="pill-select" id="qLenSelect">
+          <button class="chip" data-val="10">10</button>
+          <button class="chip active" data-val="20">20</button>
+          <button class="chip" data-val="99">All</button>
+        </div>
+      </div>
+      <button class="btn btn-primary" id="qStart">Start quiz →</button>
+    </div>`;
+  let qType = 'def', qLen = 20;
+  area.querySelector('#qTypeSelect').addEventListener('click', e=>{
+    const b = e.target.closest('.chip'); if(!b) return;
+    area.querySelectorAll('#qTypeSelect .chip').forEach(c=>c.classList.remove('active'));
+    b.classList.add('active'); qType = b.dataset.val;
+  });
+  area.querySelector('#qLenSelect').addEventListener('click', e=>{
+    const b = e.target.closest('.chip'); if(!b) return;
+    area.querySelectorAll('#qLenSelect .chip').forEach(c=>c.classList.remove('active'));
+    b.classList.add('active'); qLen = Number(b.dataset.val);
+  });
+  area.querySelector('#qStart').addEventListener('click', ()=> startQuiz(qType, qLen));
+}
+
+function buildQuestions(type, len){
+  if(type==='idiom'){
+    let pool = [...IDIOMS].sort(()=>Math.random()-0.5).slice(0, Math.min(len, IDIOMS.length));
+    return pool.map(it=>{
+      const distractorPool = IDIOMS.filter(x=>x.id!==it.id).sort(()=>Math.random()-0.5).slice(0,3);
+      const options = [...distractorPool.map(d=>d.idiom), it.idiom].sort(()=>Math.random()-0.5);
+      return {
+        prompt: it.def,
+        sub: 'Which idiom matches this meaning?',
+        answer: it.idiom,
+        options,
+        word: {w: it.idiom, no: it.no}
+      };
+    });
+  }
+  let pool = [...WORDS].sort(()=>Math.random()-0.5).slice(0, Math.min(len, WORDS.length));
+  return pool.map(w=>{
+    const t = type==='mix' ? (Math.random()<0.5?'def':'no') : type;
+    const distractorPool = WORDS.filter(x=>x.id!==w.id).sort(()=>Math.random()-0.5).slice(0,3);
+    const options = [...distractorPool.map(d=>d.w), w.w].sort(()=>Math.random()-0.5);
+    return {
+      prompt: t==='def' ? w.def : `What is the English word for "${w.no}"?`,
+      sub: t==='def' ? 'Which word matches this definition?' : `Family: ${FAMILIES[w.fam].label}`,
+      answer: w.w,
+      options,
+      word: w
+    };
+  });
+}
+
+function startQuiz(type, len){
+  quizState = { questions: buildQuestions(type,len), index:0, score:0, answered:false, review:[] };
+  renderQuizQuestion();
+}
+
+function renderQuizQuestion(){
+  const area = document.getElementById('quizArea');
+  const q = quizState.questions[quizState.index];
+  const pct = Math.round((quizState.index / quizState.questions.length) * 100);
+  area.innerHTML = `
+    <div class="quiz-box">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" style="width:${pct}%"></div></div>
+      <div class="quiz-q">${q.prompt}</div>
+      <div class="quiz-sub">${q.sub}</div>
+      <div class="quiz-options" id="quizOptions">
+        ${q.options.map(o=>`<button class="opt-btn" data-opt="${o}">${o}</button>`).join('')}
+      </div>
+      <div class="quiz-footer">
+        <div class="quiz-score">Score: ${quizState.score} / ${quizState.questions.length}</div>
+        <button class="btn btn-ghost" id="quizNextBtn" style="visibility:hidden;">Next →</button>
+      </div>
+    </div>`;
+
+  area.querySelectorAll('.opt-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      if(quizState.answered) return;
+      quizState.answered = true;
+      const chosen = btn.dataset.opt;
+      const correct = chosen === q.answer;
+      if(correct) quizState.score++;
+      quizState.review.push({word:q.word.w, no:q.word.no, correct});
+      area.querySelectorAll('.opt-btn').forEach(b=>{
+        b.disabled = true;
+        if(b.dataset.opt === q.answer) b.classList.add('correct');
+        else if(b===btn) b.classList.add('wrong');
+      });
+      const nextBtn = document.getElementById('quizNextBtn');
+      nextBtn.style.visibility = 'visible';
+      nextBtn.textContent = (quizState.index === quizState.questions.length-1) ? 'See results →' : 'Next →';
+      nextBtn.onclick = ()=>{
+        quizState.index++;
+        quizState.answered = false;
+        if(quizState.index >= quizState.questions.length){
+          renderQuizResult();
+        } else {
+          renderQuizQuestion();
+        }
+      };
+    });
+  });
+}
+
+function renderQuizResult(){
+  const area = document.getElementById('quizArea');
+  const total = quizState.questions.length;
+  const pct = Math.round((quizState.score/total)*100);
+  let msg = 'Nice work!';
+  if(pct===100) msg = "Perfect! You're a true word collector.";
+  else if(pct>=80) msg = 'Really solid!';
+  else if(pct<50) msg = 'Good start. Spend some more time with the flashcards.';
+  area.innerHTML = `
+    <div class="quiz-result">
+      <div class="eyebrow">Results</div>
+      <div class="big">${quizState.score}/${total}</div>
+      <p>${msg}</p>
+      <div class="hero-cta" style="justify-content:center;">
+        <button class="btn btn-primary" id="quizRetry">Try again</button>
+        <button class="btn btn-ghost" onclick="goTo('flashcards')">Practice with flashcards</button>
+      </div>
+      <div class="review-list">
+        ${quizState.review.map(r=>`<div class="review-item ${r.correct?'good':'bad'}"><b>${r.correct?'✓':'✗'}</b> ${r.word} <span style="color:var(--ink-soft)">(${r.no})</span></div>`).join('')}
+      </div>
+    </div>`;
+  document.getElementById('quizRetry').addEventListener('click', renderQuizSetup);
+}
+
+renderQuizSetup();
+
+/* =========================================================
+   MATCH GAME
+========================================================= */
+let matchState = null;
+let matchTimer = null;
+let matchDeck = 'words'; // 'words' | 'idioms'
+
+function renderMatchDeckToggle(){
+  const el = document.getElementById('matchDeckToggle');
+  el.innerHTML = `
+    <button class="chip ${matchDeck==='words'?'active':''}" data-deck="words">Words</button>
+    <button class="chip ${matchDeck==='idioms'?'active':''}" data-deck="idioms">Idioms</button>`;
+  el.querySelectorAll('.chip').forEach(c=>c.addEventListener('click', ()=>{
+    matchDeck = c.dataset.deck;
+    renderMatchDeckToggle();
+    newMatchGame();
+  }));
+}
+
+function newMatchGame(){
+  clearInterval(matchTimer);
+  const source = matchDeck==='idioms' ? IDIOMS : WORDS;
+  const picks = [...source].sort(()=>Math.random()-0.5).slice(0,6);
+  let tiles = [];
+  picks.forEach(item=>{
+    if(matchDeck==='idioms'){
+      tiles.push({pair:item.id, label:'\u201C'+item.idiom+'\u201D', type:'idiom'});
+      tiles.push({pair:item.id, label:item.gloss, type:'gloss'});
+    } else {
+      tiles.push({pair:item.id, label:item.w, type:'word'});
+      tiles.push({pair:item.id, label:item.syn[0], type:'syn'});
+    }
+  });
+  tiles.sort(()=>Math.random()-0.5);
+  matchState = { tiles, selected:[], matched:new Set(), moves:0, seconds:0, done:false };
+  document.getElementById('matchWin').style.display = 'none';
+  document.getElementById('matchGrid').style.display = 'grid';
+  renderMatchGrid();
+  matchTimer = setInterval(()=>{
+    matchState.seconds++;
+    const m = Math.floor(matchState.seconds/60), s = matchState.seconds%60;
+    document.getElementById('matchTime').textContent = `${m}:${s.toString().padStart(2,'0')}`;
+  },1000);
+}
+
+function renderMatchGrid(){
+  const grid = document.getElementById('matchGrid');
+  document.getElementById('matchMoves').textContent = matchState.moves;
+  grid.innerHTML = matchState.tiles.map((t,i)=>{
+    const isMatched = matchState.matched.has(i);
+    const isSelected = matchState.selected.includes(i);
+    return `<div class="tile ${isMatched?'matched':''} ${isSelected?'selected':''}" data-i="${i}">${t.label}</div>`;
+  }).join('');
+  grid.querySelectorAll('.tile').forEach(t=>t.addEventListener('click', ()=>handleTileClick(Number(t.dataset.i))));
+}
+
+function handleTileClick(i){
+  if(matchState.done) return;
+  if(matchState.matched.has(i) || matchState.selected.includes(i)) return;
+  if(matchState.selected.length===2) return;
+  matchState.selected.push(i);
+  renderMatchGrid();
+  if(matchState.selected.length===2){
+    matchState.moves++;
+    const [a,b] = matchState.selected;
+    const same = matchState.tiles[a].pair === matchState.tiles[b].pair;
+    if(same){
+      matchState.matched.add(a); matchState.matched.add(b);
+      matchState.selected = [];
+      renderMatchGrid();
+      if(matchState.matched.size === matchState.tiles.length){
+        matchState.done = true;
+        clearInterval(matchTimer);
+        setTimeout(()=>{
+          document.getElementById('matchGrid').style.display='none';
+          document.getElementById('matchWin').style.display='block';
+          document.getElementById('matchWin').innerHTML = `
+            <div class="eyebrow">Done!</div>
+            <h3>All pairs found 🎉</h3>
+            <p>${matchState.moves} trekk · ${Math.floor(matchState.seconds/60)}:${(matchState.seconds%60).toString().padStart(2,'0')}</p>
+            <button class="btn btn-primary" onclick="newMatchGame()">Play a new set →</button>`;
+        }, 400);
+      }
+    } else {
+      setTimeout(()=>{
+        const tiles = document.querySelectorAll('.tile');
+        [a,b].forEach(idx=> tiles[idx] && tiles[idx].classList.add('shake'));
+        setTimeout(()=>{
+          matchState.selected = [];
+          renderMatchGrid();
+        }, 420);
+      }, 500);
+    }
+  }
+}
+document.getElementById('matchNew').addEventListener('click', newMatchGame);
+renderMatchDeckToggle();
+newMatchGame();
+
+/* =========================================================
+   PROFILE BUILDER
+========================================================= */
+let picked = [];
+
+function renderPickGrid(){
+  const grid = document.getElementById('pickGrid');
+  grid.innerHTML = WORDS.map(w=>`
+    <div class="pick-card ${picked.includes(w.id)?'picked':''}" data-id="${w.id}">
+      <div class="word">${w.w}</div>
+      <div class="no">${w.no}</div>
+    </div>`).join('');
+  grid.querySelectorAll('.pick-card').forEach(c=>c.addEventListener('click', ()=>togglePick(Number(c.dataset.id))));
+}
+
+function togglePick(id){
+  if(picked.includes(id)){
+    picked = picked.filter(x=>x!==id);
+  } else {
+    if(picked.length>=8){
+      alert('You can pick up to 8 words for your field card. Remove one to add another.');
+      return;
+    }
+    picked.push(id);
+  }
+  renderPickGrid();
+  renderFieldCard();
+}
+
+function renderFieldCard(){
+  const list = document.getElementById('fieldList');
+  const empty = document.getElementById('fieldEmpty');
+  if(picked.length===0){
+    list.innerHTML = '';
+    empty.style.display = 'block';
+    return;
+  }
+  empty.style.display = 'none';
+  list.innerHTML = picked.map(id=>{
+    const w = WORDS.find(x=>x.id===id);
+    return `<li>${w.w}<span>${w.no} (Norwegian) · ${FAMILIES[w.fam].label}</span></li>`;
+  }).join('');
+}
+
+renderPickGrid();
+renderFieldCard();
+</script>
+</body>
+</html>
